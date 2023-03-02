@@ -1,0 +1,64 @@
+<header class="header sticky">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="d-flex justify-content-between align-items-center navbar-top">
+        <div>
+          <a class="navbar-brand" href="#">World vision</a>
+        </div>
+        <div class="d-flex"></div>
+        <ul class="navbar-right">
+          <li>Wed, March 4, 2020</li>
+          <li>30°C,London</li>
+        </ul>
+      </div>
+      <div class="navbar-bottom-menu">
+        <button class="navbar-toggler" type="button" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" (click)="toggleDisplayDivIf()">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="navbar-collapse justify-content-center collapse" 
+        [ngClass]="isShowDivIf ? 'show' : ''">
+          <ul class="navbar-nav d-lg-flex justify-content-between align-items-center">
+            <li class="navbar-close-li">
+              <button class="navbar-close" (click)="toggleDisplayDivIf()">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">close</mat-icon>
+              </button>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Home</a>
+            </li>
+            <div class="line-vertical">
+              <div class="line"></div>
+            </div>
+            <li class="nav-item">
+              <a class="nav-link" href="">World</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/author.html">General</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/news-post.html">Entertainment</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/business.html">Business</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/sports.html">Sports</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/art.html">Health</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/politics.html">Science</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="pages/real-estate.html">Technology</a>
+            </li>
+          </ul>
+        </div>
+      
+      </div>
+    </nav>
+  </div>
+</header>

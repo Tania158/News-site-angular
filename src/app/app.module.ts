@@ -6,7 +6,13 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EverythingNewsArticlesModule } from './everythingNewsArticles/everythingNewsArticles.module';
+import { GlobalPageModule } from './globalPage/globalPage.module';
+import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
+import { HeaderModule } from './header/header.module';
+import { MaterialModule } from './shared/material/material.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FooterModule } from './footer/footer.module';
+import { NgxScrollTopModule } from 'ngx-scrolltop';
 
 @NgModule({
   declarations: [
@@ -15,9 +21,9 @@ import { EverythingNewsArticlesModule } from './everythingNewsArticles/everythin
   imports: [
     BrowserModule,
     AppRoutingModule,
-    EverythingNewsArticlesModule,
     HttpClientModule,
-    StoreModule.forRoot({}),
+    StoreModule.forRoot({ router: routerReducer }),
+    StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
       logOnly: !isDevMode(), // Restrict extension to log-only mode
@@ -25,6 +31,12 @@ import { EverythingNewsArticlesModule } from './everythingNewsArticles/everythin
       trace: false, //  If set to true, will include stack trace for every dispatched action, so you can see it in trace tab jumping directly to that part of code
       traceLimit: 75, // maximum stack trace frames to be stored (in case trace option was provided as true)
     }),
+    GlobalPageModule,
+    HeaderModule,
+    FooterModule,
+    MaterialModule,
+    BrowserAnimationsModule,
+    NgxScrollTopModule
   ],
   providers: [],
   bootstrap: [AppComponent]

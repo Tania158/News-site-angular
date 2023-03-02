@@ -50,7 +50,7 @@ export class EverythingNewsArticleService {
   // }
 
   getEverythingArticles(): Observable<ArticlesResponseInterface> {
-      const url = environment.apiUrl + environment.top_headlines_sources + '?q=kyiv';
+      const url = environment.apiUrl + environment.topheadlines + '?country=de&q=protest';
 
     return this.http.get<ArticlesResponseInterface>(url, {
         headers: new HttpHeaders({

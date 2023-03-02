@@ -1,0 +1,26 @@
+.container {
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 160px;
+}
+.section-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 22px;
+  font-weight: 600;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.14;
+  letter-spacing: normal;
+  color: #3e8177;
+  margin-bottom: 22px;
+}
+.categories-news {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+
+  mat-icon {
+    color: #3e8177;
+    font-size: 30px;
+    margin-left: 8px;
+  }
+}

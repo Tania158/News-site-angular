@@ -1,0 +1,163 @@
+/* Navbar */
+$border-color: #f3f3f3;
+$white: #ffffff;
+
+$navbar-bg: #ffff;
+$navbar-bg-color: rgb(38, 238, 20);
+$navbar-width-lg: 1106px;
+$navbar-height: 140.7px;
+$navbar-menu-color: #000;
+$navbar-font-size: 16px;
+$navbar-padding-x: 38px;
+$navbar-padding-y: 32px;
+
+
+
+$header-height: 150px;
+
+.header {
+  width: 100%;
+  height: $header-height;
+  border-bottom: 1px solid #dbdbdb;
+}
+.sticky {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  background: white;
+  box-shadow: 0 6px 5px -4px #e1e1e1;
+  opacity: 1;
+}
+.container {
+  height: 100%;
+}
+.navbar {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  padding: 0;
+  display: block;
+  height: 100%;
+  .navbar-brand {
+    margin-right: 0;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 38px;
+    @media (max-width: 999px) {
+      
+    }
+  }
+}
+.navbar-top {
+  padding: 10px 0;
+  border-bottom: 1px solid #dbdbdb;
+  height: 60%;
+}
+.navbar-right {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  li {
+    list-style: none;
+    color: #000;
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 2.08;
+    padding-right: 42px;
+  }
+
+  @media (max-width: 999px) {
+    display: none;
+  }
+}
+
+.navbar-bottom-menu {
+  height: 40%;
+  .nav-link {
+    font-weight: 600;
+    color: #000;
+  }
+  @media (max-width: 999px) {
+    .navbar-toggler {
+      position: absolute;
+      top: 30px;
+      right: 0;
+      color: theme-color(primary);
+    }
+  }
+  .line-vertical {
+    padding: 8px 16px;
+  }
+  .line {
+    border-right: 1px solid #dadce0;
+    height: 20px;
+    width: 100%;
+  }
+  .navbar-collapse {
+    height: 100%;
+  }
+  .navbar-nav {
+    width: 100%;
+  }
+}
+@media (min-width: 999px) {
+  .navbar-close {
+    display: none;
+  }
+}
+@media (max-width: 999px) {
+  .collapse {
+    background: $white;
+    z-index: 99;
+  }
+  .navbar-nav {
+    height: 90%;
+  }
+  .navbar-collapse {
+    background-color: #3e8177;
+    position: fixed;
+    right: -100%;
+    top: 0px;
+    height: 100%;
+    text-align: center;
+    padding: 20px 10px;
+    transition: all 0.7s ease-in-out;
+    z-index: 101;
+    width: 290px;
+    overflow: auto;
+    @media (max-width: 768px) {
+      width: 290px;
+    }
+    @media (max-width: 567px) {
+      width: 290px;
+    }
+  }
+  .collapse:not(.show) {
+    display: block;
+  }
+  .show {
+    right: 0;
+  }
+  .nav-link {
+    font-size: 16px;
+    color: white!important;
+  }
+  .navbar-close-li {
+    width: 100%;
+  }
+  .navbar-close {
+    background: transparent;
+    border: none;
+    font-size: 25px;
+    width: 95%;
+    text-align: right;
+    mat-icon {
+      color: white;
+      font-size: 30px;
+    }
+  }
+  .line-vertical {
+    display: none;
+  }
+}

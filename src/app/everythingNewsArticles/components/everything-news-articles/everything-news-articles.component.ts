@@ -10,6 +10,9 @@ import { ArticlesResponseInterface } from '../../../shared/types/articlesRespons
 })
 export class EverythingNewsArticlesComponent implements OnInit {
 
+
+  q: string = "bitcoin"
+
   constructor(private everythingNewsArticleService: EverythingNewsArticleService) { }
   
   ngOnInit(): void {

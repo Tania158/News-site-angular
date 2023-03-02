@@ -83,3 +83,9 @@
   right: 20px;
   bottom: 20px;
 }
+.mat-mdc-fab.mat-primary,
+.mat-mdc-mini-fab.mat-primary {
+  --mdc-fab-container-color: #3e8177;
+  --mdc-fab-icon-color: #fff;
+  --mat-mdc-fab-color: #fff;
+}

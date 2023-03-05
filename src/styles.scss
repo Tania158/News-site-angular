@@ -8,5 +8,54 @@ $prefix: "mo-";
 // Then import Bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: 'Montserrat', sans-serif; }
 
+
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #dbdbdb;
+}
+.filters-select .mat-form-field-appearance-fill .mat-form-field-underline:before {
+  background-color: #3e8177;
+  height: 2px !important;
+}
+.mat-mdc-select-value {
+  color: #000;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+}
+.mdc-text-field--no-label:not(.mdc-text-field--outlined):not(.mdc-text-field--textarea) .mat-mdc-form-field-infix {
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+.mat-mdc-form-field-infix {
+  min-height: 48px;
+}
+.mat-mdc-select-arrow {
+  color: #3c3c3c;
+}
+.mat-mdc-form-field.mat-focused.mat-primary .mat-mdc-select-arrow {
+  color: #3e8177;
+}
+.mdc-text-field--filled .mdc-line-ripple::after {
+  border-bottom-color: #3e8177
+}
+.mat-primary .mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled) .mdc-list-item__primary-text {
+  color: #3e8177;
+}
+.mat-primary .mat-pseudo-checkbox-checked.mat-pseudo-checkbox-minimal::after,
+.mat-primary .mat-pseudo-checkbox-indeterminate.mat-pseudo-checkbox-minimal::after {
+  color: #3e8177;
+}
+.mdc-menu-surface {
+  background-color: #8e8e8e;
+  color: var(--mdc-theme-on-surface, #fff);
+}
+
+//---------------------
+.mat-mdc-progress-spinner {
+  --mdc-circular-progress-active-indicator-color: #3e8177;
+}
+mat-spinner {
+  width: 40px!important;
+  height: 40px!important;
+}

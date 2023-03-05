@@ -13,6 +13,9 @@ import { MaterialModule } from './shared/material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FooterModule } from './footer/footer.module';
 import { NgxScrollTopModule } from 'ngx-scrolltop';
+import { SelectedCountryModule } from './shared/modules/selected-country/selected-country.module';
+import { EffectsModule } from '@ngrx/effects';
+import { EverythingNewsArticlesModule } from './everythingNewsArticles/everythingNewsArticles.module';
 
 @NgModule({
   declarations: [
@@ -23,6 +26,7 @@ import { NgxScrollTopModule } from 'ngx-scrolltop';
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot({ router: routerReducer }),
+    EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot(),
     StoreDevtoolsModule.instrument({
       maxAge: 25, // Retains last 25 states
@@ -36,7 +40,9 @@ import { NgxScrollTopModule } from 'ngx-scrolltop';
     FooterModule,
     MaterialModule,
     BrowserAnimationsModule,
-    NgxScrollTopModule
+    NgxScrollTopModule,
+    SelectedCountryModule,
+    EverythingNewsArticlesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,17 +6,17 @@ export const articlesCountryFeatureSelector = (
   state: AppStateInterface
 ): ArticleStateInterface => state.articlesCountry;
 
-export const isLoadingSelector = createSelector(
+export const isLoadingCountrySelector = createSelector(
   articlesCountryFeatureSelector,
   (articlesCountryState: ArticleStateInterface) => articlesCountryState.isLoading
 );
 
-export const errorSelector = createSelector(
+export const errorCountrySelector = createSelector(
   articlesCountryFeatureSelector,
   (articlesCountryState: ArticleStateInterface) => articlesCountryState.error
 );
 
-export const articleSelector = createSelector(
+export const articlesCountrySelector = createSelector(
   articlesCountryFeatureSelector,
   (articlesCountryState: ArticleStateInterface) => articlesCountryState.data
 );

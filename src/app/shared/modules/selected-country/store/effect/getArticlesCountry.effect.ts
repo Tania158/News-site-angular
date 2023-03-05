@@ -25,7 +25,7 @@ export class GetArticlesCountryEffect {
             return getArticlesCountrySuccesAction({ response });
           }),
           catchError((errorResponse: HttpErrorResponse) => {
-            return of(getArticlesCountryFailureAction({errors: errorResponse.error.errors}));
+            return of(getArticlesCountryFailureAction({errors: errorResponse.error}));
           })
         )
       })

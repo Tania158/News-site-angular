@@ -1,0 +1,9 @@
+$header-height: 150px;
+$footer-height: 440px;
+
+main {
+  min-height: calc(100vh - $footer-height);
+  @media (max-width: 767px) {
+    min-height: $header-height;
+  }
+}

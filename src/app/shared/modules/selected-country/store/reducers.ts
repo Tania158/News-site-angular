@@ -15,7 +15,8 @@ const articleReducer = createReducer(
     getArticlesCountryAction,
     (state): ArticleStateInterface => ({
       ...state,
-      isLoading: true
+      isLoading: true,
+      error: null,
     })
   ),
   on(
@@ -23,7 +24,8 @@ const articleReducer = createReducer(
     (state, action): ArticleStateInterface => ({
       ...state,
       isLoading: false,
-      data: action.response
+      data: action.response,
+      error: null,
     })
   ),
   on(

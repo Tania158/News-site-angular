@@ -11,12 +11,13 @@
   line-height: 1.14;
   letter-spacing: normal;
   color: #3e8177;
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 .categories-news {
+  margin: 35px 15px;
   display: flex;
   flex-direction: column;
-  gap: 30px;
+  gap: 15px;
 
   mat-icon {
     color: #3e8177;
@@ -39,7 +40,28 @@
   }
 }
 //--------------------
+.news-main {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.top-news {
+  padding: 15px;
+  background-color: #3e81771d;
+  border-radius: 15px;
+}
+
+.line-title {
+  border-bottom: 1px solid #dbdbdb;
+  margin-bottom: 20px;
+  padding-top: 20px;
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .news-container {
+  padding-top: 8px;
   .image-hover {
     overflow: hidden;
   }

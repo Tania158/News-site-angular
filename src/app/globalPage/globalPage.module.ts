@@ -6,6 +6,7 @@ import { MaterialModule } from '../shared/material/material.module';
 import { SelectedCountryModule } from "../shared/modules/selected-country/selected-country.module";
 import { BackendErrorMessagesModule } from "../shared/modules/backendErrorMessages/backendErrorMessages.module";
 import { LoadingModule } from "../shared/modules/loading/loading.module";
+import { SelectedCountryService } from "../shared/services/selectedCountry.service";
 
 const routes = [
   {
@@ -21,10 +22,11 @@ const routes = [
     RouterModule.forChild(routes),
     SelectedCountryModule,
     BackendErrorMessagesModule,
-    LoadingModule
+    LoadingModule,
   ],
   declarations: [
     GlobalPageComponent
-  ]
+  ],
+  providers: [SelectedCountryService]
 })
 export class GlobalPageModule {}

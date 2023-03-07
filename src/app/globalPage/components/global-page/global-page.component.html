@@ -16,10 +16,10 @@
       [backendErrors]="error$ | async"
     ></app-backend-error-messages>
 
-    <div *ngIf="!(error$ | async)">
+    <div *ngIf="!(error$ | async)" class="news-main">
       <div class="top-news">
-        <div class="row">
-          <div class="d-flex position-relative float-left">
+        <div class="row line-title">
+          <div class="d-flex position-relative float-left" [routerLink]="['/articles', selectedCountry]">
             <h3 class="section-title">Top News in <strong>{{ getSelectedCountryName(selectedCountry) }}</strong></h3>
             <mat-icon>navigate_next</mat-icon>
           </div>
@@ -143,8 +143,8 @@
           </div>
         </div>
       </div>
-      <div class="world-news">
-        <div class="row">
+      <div class="top-news">
+        <div class="row line-title">
           <div class="col-lg-3">
             <div class="d-flex position-relative float-left">
               <h3 class="section-title">Top News</h3>
@@ -155,7 +155,7 @@
         <div class="row">
           <div class="col-lg-3 col-sm-6 grid-margin mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/travel.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">TRAVEL</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -168,7 +168,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/news.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">NEWS</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -181,7 +181,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/art.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">ART</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -194,7 +194,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/business.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">BUSINESS</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -207,8 +207,8 @@
           </div>
         </div>
       </div>
-      <div class="general-news">
-        <div class="row">
+      <div class="top-news">
+        <div class="row line-title">
           <div class="col-lg-3">
             <div class="d-flex position-relative float-left">
               <h3 class="section-title">General News</h3>
@@ -219,7 +219,7 @@
         <div class="row">
           <div class="col-lg-3 col-sm-6 grid-margin mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/travel.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">TRAVEL</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -232,7 +232,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/news.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">NEWS</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -245,7 +245,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/art.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">ART</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -258,7 +258,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/business.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">BUSINESS</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -271,8 +271,8 @@
           </div>
         </div>
       </div>
-      <div class="entertainment-news">
-        <div class="row">
+      <div class="top-news">
+        <div class="row line-title">
           <div class="col-lg-3">
             <div class="d-flex position-relative float-left">
               <h3 class="section-title">Entertainment News</h3>
@@ -283,7 +283,7 @@
         <div class="row">
           <div class="col-lg-3 col-sm-6 grid-margin mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/travel.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">TRAVEL</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -296,7 +296,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/news.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">NEWS</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -309,7 +309,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/art.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">ART</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -322,7 +322,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/business.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">BUSINESS</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -335,8 +335,8 @@
           </div>
         </div>
       </div>
-      <div class="business-news">
-        <div class="row">
+      <div class="top-news">
+        <div class="row line-title">
           <div class="col-lg-3">
             <div class="d-flex position-relative float-left">
               <h3 class="section-title">Business News</h3>
@@ -347,7 +347,7 @@
         <div class="row">
           <div class="col-lg-3 col-sm-6 grid-margin mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/travel.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">TRAVEL</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -360,7 +360,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/news.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">NEWS</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -373,7 +373,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/art.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">ART</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -386,7 +386,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/business.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">BUSINESS</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -399,8 +399,8 @@
           </div>
         </div>
       </div>
-      <div class="sports-news">
-        <div class="row">
+      <div class="top-news">
+        <div class="row line-title">
           <div class="col-lg-3">
             <div class="d-flex position-relative float-left">
               <h3 class="section-title">Sports News</h3>
@@ -411,7 +411,7 @@
         <div class="row">
           <div class="col-lg-3 col-sm-6 grid-margin mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/travel.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">TRAVEL</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -424,7 +424,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/news.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">NEWS</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -437,7 +437,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/art.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">ART</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -450,7 +450,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/business.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">BUSINESS</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -463,8 +463,8 @@
           </div>
         </div>
       </div>
-      <div class="health-news">
-        <div class="row">
+      <div class="top-news">
+        <div class="row line-title">
           <div class="col-lg-3">
             <div class="d-flex position-relative float-left">
               <h3 class="section-title">Health News</h3>
@@ -475,7 +475,7 @@
         <div class="row">
           <div class="col-lg-3 col-sm-6 grid-margin mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/travel.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">TRAVEL</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -488,7 +488,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/news.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">NEWS</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -501,7 +501,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/art.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">ART</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -514,7 +514,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/business.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">BUSINESS</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -527,8 +527,8 @@
           </div>
         </div>
       </div>
-      <div class="science-news">
-        <div class="row">
+      <div class="top-news">
+        <div class="row line-title">
           <div class="col-lg-3">
             <div class="d-flex position-relative float-left">
               <h3 class="section-title">Science News</h3>
@@ -539,7 +539,7 @@
         <div class="row">
           <div class="col-lg-3 col-sm-6 grid-margin mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/travel.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">TRAVEL</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -552,7 +552,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/news.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">NEWS</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -565,7 +565,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/art.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">ART</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -578,7 +578,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/business.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">BUSINESS</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -591,8 +591,8 @@
           </div>
         </div>
       </div>
-      <div class="technology-news">
-        <div class="row">
+      <div class="top-news">
+        <div class="row line-title">
           <div class="col-lg-3">
             <div class="d-flex position-relative float-left">
               <h3 class="section-title">Technology News</h3>
@@ -603,7 +603,7 @@
         <div class="row">
           <div class="col-lg-3 col-sm-6 grid-margin mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/travel.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">TRAVEL</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -616,7 +616,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/news.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">NEWS</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -629,7 +629,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/art.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">ART</span>
             </div>
             <h5 class="font-weight-bold mt-3">
@@ -642,7 +642,7 @@
           </div>
           <div class="col-lg-3 col-sm-6 mb-5 mb-sm-2">
             <div class="position-relative image-hover">
-              <img src="assets/images/dashboard/business.jpg" class="img-fluid" alt="world-news" />
+              <img src="" class="img-fluid" alt="world-news" />
               <span class="thumb-title">BUSINESS</span>
             </div>
             <h5 class="font-weight-bold mt-3">

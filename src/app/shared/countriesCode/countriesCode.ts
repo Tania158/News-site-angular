@@ -1,4 +1,4 @@
-import { Countries } from "../types/countries.interface";
+import { Countries } from "./types/countries.interface";
 
 export const CountriesCode: Countries[] = [
   { value: 'ae', viewValue: 'United Arab Emirates' },

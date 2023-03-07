@@ -26,34 +26,34 @@
               </button>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="">Home</a>
+              <a class="nav-link" [routerLink]="['/']">Home</a>
             </li>
             <div class="line-vertical">
               <div class="line"></div>
             </div>
             <li class="nav-item">
-              <a class="nav-link" href="">World</a>
+              <a class="nav-link" [routerLink]="['/articles', selectedCountryCode]">{{ selectedCountryName }}</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/author.html">General</a>
+              <a class="nav-link" [routerLink]="['/articles/general']">General</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/news-post.html">Entertainment</a>
+              <a class="nav-link" [routerLink]="['/articles/entertainment']">Entertainment</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/business.html">Business</a>
+              <a class="nav-link" [routerLink]="['/articles/business']">Business</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/sports.html">Sports</a>
+              <a class="nav-link" [routerLink]="['/articles/sports']">Sports</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/art.html">Health</a>
+              <a class="nav-link" [routerLink]="['/articles/health']">Health</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/politics.html">Science</a>
+              <a class="nav-link" [routerLink]="['/articles/science']">Science</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="pages/real-estate.html">Technology</a>
+              <a class="nav-link" [routerLink]="['/articles/technology']">Technology</a>
             </li>
           </ul>
         </div>

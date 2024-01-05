@@ -11,20 +11,36 @@
       </mat-form-field>
     </div> -->
 
+    <div class="filter-news">
+      <div class="button-filter" 
+        (click)="getNewsBusiness('country')" 
+        [ngClass]="{'active': activeStep === 'country'}">
+        <div>{{ selectedCountryName }}</div>
+      </div>
+      <div class="button-filter" 
+        (click)="getNewsBusiness('world')" 
+        [ngClass]="{'active': activeStep === 'world'}">
+        <div>World</div>
+      </div>
+    </div>
+
     <app-backend-error-messages *ngIf="error$ | async" [backendErrors]="error$ | async"></app-backend-error-messages>
 
     <div *ngIf="!(error$ | async)">
       <div class="top-news">
         <div class="row">
           <div class="d-flex position-relative float-left">
-            <h3 class="section-title">Top News in <strong>{{ selectedCountryName }}</strong></h3>
+            <h3 class="section-title">Business News in 
+              <strong *ngIf="activeStep === 'country'">{{ selectedCountryName }}</strong>
+              <strong *ngIf="activeStep === 'world'">World</strong>
+            </h3>
           </div>
         </div>
         <app-loading *ngIf="isLoading$ | async"></app-loading>
-        <div class="row news-container" *ngIf="articlesResponse">
-          <div class="news-item" *ngFor="let article of articlesResponse">
+        <div class="row news-container" *ngIf="!(isLoading$ | async) && newsBusinessResponse">
+          <div class="news-item" *ngFor="let article of newsBusinessResponse">
             <a href="{{ article.url }}" class="col-lg-6 article">
-              <div>
+              <div class="content-container">
                 <div *ngIf="article.author" class="article-author">
                   <div class="article-author__block">{{ domainName(article.author) }}</div>
                 </div>

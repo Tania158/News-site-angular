@@ -8,9 +8,7 @@ $prefix: "mo-";
 // Then import Bootstrap
 @import "../node_modules/bootstrap/scss/bootstrap";
 html, body { height: 100%; }
-body { margin: 0; font-family: 'Montserrat', sans-serif; }
-
-
+body { margin: 0; font-family: 'Montserrat', sans-serif; background-color: #f5f5f7; }
 
 //---------------------------------------------
 .mdc-text-field--filled:not(.mdc-text-field--disabled) {

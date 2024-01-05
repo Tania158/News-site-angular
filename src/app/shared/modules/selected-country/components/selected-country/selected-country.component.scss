@@ -40,7 +40,7 @@
   .news-item {
     max-width: 49%;
     padding: 15px;
-    background-color: #3e81771d;
+    background-color: white;
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -106,12 +106,12 @@
   .article-author {
     margin-top: 12px;
     font-weight: 700;
-    color: #3e8177;
+    color: white;
     font-size: 14px;
 
     &__block {
       padding: 5px;
-      background-color: #dbdbdb;
+      background-color: #3e8177;
       display: inline-block;
     }
   }

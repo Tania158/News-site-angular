@@ -1,5 +1,4 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 import { select, Store } from '@ngrx/store';
 import { Observable, Subscription } from 'rxjs';
 import { SelectedCountryService } from 'src/app/shared/services/selectedCountry.service';
@@ -7,55 +6,54 @@ import { AppStateInterface } from 'src/app/shared/types/appState.interface';
 import { Article } from 'src/app/shared/types/article.interface';
 import { ArticlesResponseInterface } from 'src/app/shared/types/articlesResponse.Interface';
 import { BackendErrorsInterface } from 'src/app/shared/types/backendErrors.interface';
-import { getArticlesCountryAction } from '../../store/action/getArticlesCountry.action';
-import { articlesCountrySelector, errorCountrySelector, isLoadingCountrySelector } from '../../store/selectors';
+import { getNewsBusinessAction } from '../../store/action/getNewsBusiness.action';
+import { isLoadingNewsBusinessSelector, errorNewsBusinessSelector, newsBusinessDataSelector } from '../../store/selectors';
 
 @Component({
-  selector: 'app-selected-country',
-  templateUrl: './selected-country.component.html',
-  styleUrls: ['./selected-country.component.scss']
+  selector: 'app-business-category',
+  templateUrl: './business-category.component.html',
+  styleUrls: ['./business-category.component.scss']
 })
-export class SelectedCountryComponent implements OnInit, OnDestroy {
+export class BusinessCategoryComponent implements OnInit, OnDestroy {
 
-  selectedCountry!: string;
   selectedCountryName!: string;
 
   isLoading$!: Observable<boolean>;
   error$!: Observable<BackendErrorsInterface | null>;
-  articlesResponseSubs!: Subscription;
+  newsBusinessResponseSubs!: Subscription;
 
-  articlesResponse: Article[];
+  newsBusinessResponse: Article[];
+  activeStep = 'country';
 
-  q: string = '';
+  q: string;
   country: string;
-  sources: string = '';
-  category: string = '';
+  sources: string;
+  category: string = 'business';
   pageSize: number = 30;
   page: number = 1;
 
   constructor(
     private store: Store<AppStateInterface>,
-    private route: ActivatedRoute,
     private selectedCountryService: SelectedCountryService
   ) { }
-
-  ngOnDestroy(): void {
-    this.articlesResponseSubs.unsubscribe();
-  }
-
+  
   ngOnInit(): void {
     this.initializeValues();
     this.initializeListeners();
     this.fetchData();
   }
 
+  ngOnDestroy(): void {
+    this.newsBusinessResponseSubs.unsubscribe();
+  }
+
   fetchData(): void {
-    this.store.dispatch(getArticlesCountryAction(
+    this.store.dispatch(getNewsBusinessAction(
       {
         q: '',
         country: this.country,
         sources: '',
-        category: '',
+        category: this.category,
         pageSize: this.pageSize,
         page: this.page
       }
@@ -63,20 +61,19 @@ export class SelectedCountryComponent implements OnInit, OnDestroy {
   }
 
   initializeValues(): void {
-    this.selectedCountry = this.route.snapshot.paramMap.get('country') || '';
-    this.isLoading$ = this.store.pipe(select(isLoadingCountrySelector));
-    this.error$ = this.store.pipe(select(errorCountrySelector));
+    this.isLoading$ = this.store.pipe(select(isLoadingNewsBusinessSelector));
+    this.error$ = this.store.pipe(select(errorNewsBusinessSelector));
 
     this.country = this.selectedCountryService.get('countryCode');
     this.selectedCountryName = this.selectedCountryService.get('countryName');
   }
 
   initializeListeners(): void {
-    this.articlesResponseSubs = this.store
-      .pipe(select(articlesCountrySelector))
+    this.newsBusinessResponseSubs = this.store
+      .pipe(select(newsBusinessDataSelector))
       .subscribe((response: ArticlesResponseInterface | null) => {
         if (response?.articles) {
-          this.articlesResponse = response?.articles;
+          this.newsBusinessResponse = response?.articles;
         }
       }) 
   }
@@ -92,5 +89,15 @@ export class SelectedCountryComponent implements OnInit, OnDestroy {
     url = url.replace(",", '');
 
     return url.split('/')[0];
+  }
+
+  getNewsBusiness(step: string): void {
+    this.activeStep = step;
+    if (step === 'world') {
+      this.country = '';
+      this.fetchData();
+    } else {
+      this.ngOnInit();
+    }
   }
 }

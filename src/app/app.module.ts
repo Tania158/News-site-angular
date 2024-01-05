@@ -16,6 +16,7 @@ import { NgxScrollTopModule } from 'ngx-scrolltop';
 import { SelectedCountryModule } from './shared/modules/selected-country/selected-country.module';
 import { EffectsModule } from '@ngrx/effects';
 import { EverythingNewsArticlesModule } from './everythingNewsArticles/everythingNewsArticles.module';
+import { BusinessCategoryModule } from './shared/modules/business-category/businessCategory.module';
 
 @NgModule({
   declarations: [
@@ -41,8 +42,9 @@ import { EverythingNewsArticlesModule } from './everythingNewsArticles/everythin
     MaterialModule,
     BrowserAnimationsModule,
     NgxScrollTopModule,
+    EverythingNewsArticlesModule,
+    BusinessCategoryModule,
     SelectedCountryModule,
-    EverythingNewsArticlesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

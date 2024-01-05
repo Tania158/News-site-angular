@@ -13,16 +13,16 @@ export class HeaderComponent implements OnInit {
   constructor(private selectedCountryService: SelectedCountryService) { }
 
   get selectedCountryName(): string {
-    if (this.selectedCountryService.selectedCountryName) {
-      return this.selectedCountryService.selectedCountryName;
+    if (this.selectedCountryService.get('countryName')) {
+      return this.selectedCountryService.get('countryName');;
     } else {
       return 'Country'
     }
   }
 
   get selectedCountryCode(): string {
-    if (this.selectedCountryService.selectedCountryCode) {
-      return this.selectedCountryService.selectedCountryCode;
+    if (this.selectedCountryService.get('countryCode')) {
+      return this.selectedCountryService.get('countryCode');
     } else {
       return 'country'
     }

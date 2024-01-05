@@ -29,16 +29,17 @@ export class GlobalPageComponent implements OnInit {
   constructor(
     private store: Store<AppStateInterface>,
     private selectedCountryService: SelectedCountryService
-    ) { }
+  ) { }
   
   ngOnInit(): void {
     this.initializeValues();
     this.fetchData();
+    this.setSelectedCountry();
   }
 
   setSelectedCountry(): void {
-    this.selectedCountryService.selectedCountryName = this.getSelectedCountryName(this.selectedCountry);
-    this.selectedCountryService.selectedCountryCode = this.selectedCountry;
+    this.selectedCountryService.set('countryName', this.getSelectedCountryName(this.selectedCountry));
+    this.selectedCountryService.set('countryCode', this.selectedCountry);
   }
 
   fetchData(): void {
@@ -70,11 +71,14 @@ export class GlobalPageComponent implements OnInit {
     url = url.replace("https://", '');
     url = url.replace("http://", '');
     url = url.replace("www.", '');
-    return url;
+    url = url.replace(",", '');
+
+    return url.split('/')[0];
   }
 
   applyFilter(): void {
     this.setSelectedCountry();
+    this.selectedCountryService.selectedCountryCode = this.selectedCountryService.get('countryCode');
     this.store.dispatch(getArticlesCountryAction(
       {
         q: '',
